@@ -6,13 +6,13 @@ const  {getAllJobs , getJob , createJob , updateJob , deleteJob}  = require('../
 
 route.get('/getAllJobs' , getAllJobs) ;
 
-route.get('/getJob' , getJob) ;
+route.get('/getJob/:id' , getJob) ;
 
 route.post('/createJob'  , createJob) ;
 
-route.patch('/updateJob' , updateJob) ;
+route.patch('/updateJob/:id' , updateJob) ;
 
-route.delete('/deleteJob' , deleteJob) ;
+route.delete('/deleteJob/:id' , deleteJob) ;
 
 
 
