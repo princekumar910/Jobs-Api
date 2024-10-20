@@ -3,7 +3,7 @@ require('express-async-errors');
 const express = require('express');
 const app = express();
 const connectDB = require('./db/connect')
-
+const {auth} = require('./middleware/authentication')
 // routes 
 const authRoute = require('./routes/auth');
 const jobRoute = require('./routes/jobs') ;
@@ -18,7 +18,7 @@ app.use(express.json());
 // routes
 
 app.use('/api/v1/auth' , authRoute) ;
-app.use('/api/v1/job' , jobRoute) ;
+app.use('/api/v1/job' , auth ,jobRoute) ;
 app.get('/', (req, res) => {
   res.send('jobs api');
 });

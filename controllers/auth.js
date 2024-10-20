@@ -29,7 +29,7 @@ async function login(req, res) {
      return res.json({msg : "Invalid Crendentials"})
     }
     
-    //comapre Password
+    //comapre Password 
  const isPasswordCorrect = await user.comparePassword(password) ;
 
  if(!isPasswordCorrect){
